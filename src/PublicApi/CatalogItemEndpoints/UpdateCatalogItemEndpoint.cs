@@ -54,6 +54,7 @@ public class UpdateCatalogItemEndpoint : IEndpoint<IResult, UpdateCatalogItemReq
             CatalogBrandId = existingItem.CatalogBrandId,
             CatalogTypeId = existingItem.CatalogTypeId,
             Description = existingItem.Description,
+            Subtitle = existingItem.Subtitle,
             Name = existingItem.Name,
             PictureUri = _uriComposer.ComposePicUri(existingItem.PictureUri),
             Price = existingItem.Price

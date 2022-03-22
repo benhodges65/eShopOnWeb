@@ -46,6 +46,9 @@ public class IndexModel : PageModel
         return RedirectToPage();
     }
 
+    private void onClearClicked(){
+        BasketModel.removeAll();
+    }
     public async Task OnPostUpdate(IEnumerable<BasketItemViewModel> items)
     {
         if (!ModelState.IsValid)
@@ -57,6 +60,21 @@ public class IndexModel : PageModel
         var updateModel = items.ToDictionary(b => b.Id.ToString(), b => b.Quantity);
         var basket = await _basketService.SetQuantities(basketView.Id, updateModel);
         BasketModel = await _basketViewModelService.Map(basket);
+    }
+
+    public async Task OnPostClear(IEnumerable<BasketItemViewModel> items)
+    {
+        
+        if (!ModelState.IsValid)
+        {
+            var errors = ModelState
+            .Where(x => x.Value.Errors.Count > 0)
+            .Select(x => new { x.Key, x.Value.Errors });
+            Console.WriteLine(errors);
+            return;
+        }
+        var basketView = await _basketViewModelService.GetOrCreateBasketForUser(GetOrSetBasketCookieAndUserName());
+        await _basketService.DeleteBasketAsync(basketView.Id);
     }
 
     private string GetOrSetBasketCookieAndUserName()

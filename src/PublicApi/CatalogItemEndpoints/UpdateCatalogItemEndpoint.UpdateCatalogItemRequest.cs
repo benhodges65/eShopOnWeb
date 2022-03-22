@@ -13,6 +13,8 @@ public class UpdateCatalogItemRequest : BaseRequest
     [Required]
     public string Description { get; set; }
     [Required]
+    public string Subtitle { get; set; }
+    [Required]
     public string Name { get; set; }
     public string PictureBase64 { get; set; }
     public string PictureUri { get; set; }

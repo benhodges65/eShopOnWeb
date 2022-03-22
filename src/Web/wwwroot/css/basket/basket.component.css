@@ -19,7 +19,7 @@
     font-size: 1rem;
     font-weight: 300; }
     .esh-basket-item--middle {
-      line-height: 8rem; }
+      line-height: 2rem; }
       @media screen and (max-width: 1024px) {
         .esh-basket-item--middle {
           line-height: 1rem; } }

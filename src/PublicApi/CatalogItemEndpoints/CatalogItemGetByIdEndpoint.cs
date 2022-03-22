@@ -47,6 +47,7 @@ public class CatalogItemGetByIdEndpoint : IEndpoint<IResult, GetByIdCatalogItemR
             CatalogBrandId = item.CatalogBrandId,
             CatalogTypeId = item.CatalogTypeId,
             Description = item.Description,
+            Subtitle = item.Subtitle,
             Name = item.Name,
             PictureUri = _uriComposer.ComposePicUri(item.PictureUri),
             Price = item.Price

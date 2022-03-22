@@ -14,4 +14,7 @@ public class BasketViewModel
     {
         return Math.Round(Items.Sum(x => x.UnitPrice * x.Quantity), 2);
     }
+    public void removeAll(){
+        Items.Clear();
+    }
 }

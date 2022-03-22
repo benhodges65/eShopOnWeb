@@ -9,6 +9,8 @@ public class OrderBuilder
     public string TestBuyerId => "12345";
     public int TestCatalogItemId => 234;
     public string TestProductName => "Test Product Name";
+
+    public string TestSubtitle => "Test Subtitle";
     public string TestPictureUri => "http://test.com/image.jpg";
     public decimal TestUnitPrice = 1.23m;
     public int TestUnits = 3;
@@ -16,7 +18,7 @@ public class OrderBuilder
 
     public OrderBuilder()
     {
-        TestCatalogItemOrdered = new CatalogItemOrdered(TestCatalogItemId, TestProductName, TestPictureUri);
+        TestCatalogItemOrdered = new CatalogItemOrdered(TestCatalogItemId, TestProductName, TestSubtitle, TestPictureUri);
         _order = WithDefaultValues();
     }
 

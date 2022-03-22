@@ -8,6 +8,8 @@ public class CatalogItem : BaseEntity, IAggregateRoot
 {
     public string Name { get; private set; }
     public string Description { get; private set; }
+    
+    public string Subtitle {get; private set; }
     public decimal Price { get; private set; }
     public string PictureUri { get; private set; }
     public int CatalogTypeId { get; private set; }
@@ -18,6 +20,7 @@ public class CatalogItem : BaseEntity, IAggregateRoot
     public CatalogItem(int catalogTypeId,
         int catalogBrandId,
         string description,
+        string subtitle,
         string name,
         decimal price,
         string pictureUri)
@@ -25,6 +28,7 @@ public class CatalogItem : BaseEntity, IAggregateRoot
         CatalogTypeId = catalogTypeId;
         CatalogBrandId = catalogBrandId;
         Description = description;
+        Subtitle = subtitle;
         Name = name;
         Price = price;
         PictureUri = pictureUri;

@@ -37,6 +37,7 @@ public class GetOrderDetailsHandler : IRequestHandler<GetOrderDetails, OrderView
                 PictureUrl = oi.ItemOrdered.PictureUri,
                 ProductId = oi.ItemOrdered.CatalogItemId,
                 ProductName = oi.ItemOrdered.ProductName,
+                ProductSubtitle = oi.ItemOrdered.ProductSubtitle,
                 UnitPrice = oi.UnitPrice,
                 Units = oi.Units
             }).ToList(),

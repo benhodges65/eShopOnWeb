@@ -41,7 +41,7 @@ public class OrderService : IOrderService
         var items = basket.Items.Select(basketItem =>
         {
             var catalogItem = catalogItems.First(c => c.Id == basketItem.CatalogItemId);
-            var itemOrdered = new CatalogItemOrdered(catalogItem.Id, catalogItem.Name, _uriComposer.ComposePicUri(catalogItem.PictureUri));
+            var itemOrdered = new CatalogItemOrdered(catalogItem.Id, catalogItem.Name, catalogItem.Subtitle, _uriComposer.ComposePicUri(catalogItem.PictureUri));
             var orderItem = new OrderItem(itemOrdered, basketItem.UnitPrice, basketItem.Quantity);
             return orderItem;
         }).ToList();

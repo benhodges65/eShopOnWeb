@@ -33,6 +33,7 @@ public class GetMyOrdersHandler : IRequestHandler<GetMyOrders, IEnumerable<Order
                 PictureUrl = oi.ItemOrdered.PictureUri,
                 ProductId = oi.ItemOrdered.CatalogItemId,
                 ProductName = oi.ItemOrdered.ProductName,
+                ProductSubtitle = oi.ItemOrdered.ProductSubtitle, 
                 UnitPrice = oi.UnitPrice,
                 Units = oi.Units
             }).ToList(),

@@ -10,13 +10,14 @@ public class UpdateDetails
     private int _validTypeId = 1;
     private int _validBrandId = 2;
     private string _validDescription = "test description";
+    private string _validSubtitle = "test Subtitle";
     private string _validName = "test name";
     private decimal _validPrice = 1.23m;
     private string _validUri = "/123";
 
     public UpdateDetails()
     {
-        _testItem = new CatalogItem(_validTypeId, _validBrandId, _validDescription, _validName, _validPrice, _validUri);
+        _testItem = new CatalogItem(_validTypeId, _validBrandId, _validDescription, _validSubtitle, _validName, _validPrice, _validUri);
     }
 
     [Fact]

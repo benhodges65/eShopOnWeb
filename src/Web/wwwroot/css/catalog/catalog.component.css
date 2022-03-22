@@ -107,6 +107,14 @@
   text-align: center;
   text-transform: uppercase; }
 
+.esh-catalog-subtitle {
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: .5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .esh-catalog-price {
   font-size: 28px;
   font-weight: 900;

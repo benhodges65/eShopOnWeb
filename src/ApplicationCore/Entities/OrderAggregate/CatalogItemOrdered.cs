@@ -8,7 +8,7 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate;
 /// </summary>
 public class CatalogItemOrdered // ValueObject
 {
-    public CatalogItemOrdered(int catalogItemId, string productName, string pictureUri)
+    public CatalogItemOrdered(int catalogItemId, string productName, string productSubtitle, string pictureUri)
     {
         Guard.Against.OutOfRange(catalogItemId, nameof(catalogItemId), 1, int.MaxValue);
         Guard.Against.NullOrEmpty(productName, nameof(productName));
@@ -16,6 +16,7 @@ public class CatalogItemOrdered // ValueObject
 
         CatalogItemId = catalogItemId;
         ProductName = productName;
+        ProductSubtitle = productSubtitle;
         PictureUri = pictureUri;
     }
 
@@ -26,5 +27,6 @@ public class CatalogItemOrdered // ValueObject
 
     public int CatalogItemId { get; private set; }
     public string ProductName { get; private set; }
+    public string ProductSubtitle { get; private set; }
     public string PictureUri { get; private set; }
 }
